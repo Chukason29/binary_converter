@@ -9,19 +9,19 @@ const checkUserInput = (input) => {
     }
     decimalToBinary(parseInt(numberInput.value));
     numberInput.value = "" // to empty the input field
-    const inputs = []
-    const quotients = []
-    const remainders = []
-    
-    while (input > 0) {
-        let quotient = Math.floor(input / 2);
-        let remainder = input % 2;
-        input = quotient;
-        inputs.push(input);
-    }
 }
-const decimalToBinary = () => {
-
+const decimalToBinary = (input) => {
+    const decimalToBinary = (input) => {
+        let binary = "";
+        if (input === 0) {
+          binary = "0";
+        }
+        while (input > 0) {
+          binary = (input % 2) + binary;
+          input = Math.floor(input / 2);
+        }
+        result.innerText = binary;
+      };
 }
 convertBtn.addEventListener("click", checkUserInput)
 numberInput.addEventListener("keydown", (e) => {
@@ -29,16 +29,15 @@ numberInput.addEventListener("keydown", (e) => {
         checkUserInput()
     }
 })
-/*
-const binaryArray = [];
+
+/*const binaryArray = [];
 const binaryConverter = (n) => {
     if(n === 0){
         return [];
     }else{
         binaryConverter(~~(n/2)) // getting the quotient of the dividend
-        binaryArray.push(n%2) // getting the reminder
-        return binaryArray.toString();
+        binaryArray.push(~~(n/2)) // getting the reminder
+        return binaryArray;  1
     }
 }
-console.log(binaryConverter(150))
-*/
+console.log(binaryConverter(118))*/
